@@ -4,8 +4,6 @@
 const express = require('express');
 const trials = require('./data.js')
 const app = express();
-// important gotcha! Copy this line!
-const port = process.env.PORT || 3000;
 
 // our first ENDPOINT / ROUTE
 app.get('/', (req, res) => {
@@ -24,6 +22,4 @@ app.get('/trials/:id', (req, res) => {
     res.json(trial);
 });
 
-app.listen(port, () => {
-console.log(`Example app listening at http://localhost:${port}`)
-});
+module.exports = app;
